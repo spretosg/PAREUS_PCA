@@ -35,7 +35,7 @@ st.title('PAREUS study areas')
 
 st.sidebar.info(
     """
-    - Web App URL: <https://streamlit.geemap.org>
+    - Web App URL: <https://pareus.streamlit.app/>
     - GitHub repository: <https://github.com/spretosg/PAREUS_pca>
     """
 )
