@@ -6,9 +6,9 @@ A tool to optimise the network of protected areas (PA) and Other effective area-
 ### Content
 1. PAREUS study areas
 2. PAREUS study results (under construction)
-3. Regional ecosystem accounting
-4. Policy coherence
-5. Optimisation
+3. Regional ecosystem accounting (under construction)
+4. Policy coherence (under construction)
+5. Optimisation (under construction)
     
   
 ### Workflow
