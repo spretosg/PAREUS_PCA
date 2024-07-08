@@ -7,7 +7,7 @@ import ee
 
 #def ee_authenticate(token_name="EARTHENGINE_TOKEN"):
 #    geemap.ee_initialize(token_name=token_name)
-geemap.ee_initialize()
+geemap.ee_initialize(project = "pareus")
 
 st.set_page_config(layout="wide")
 
