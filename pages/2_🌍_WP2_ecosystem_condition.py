@@ -7,7 +7,7 @@ import ee
 
 #def ee_authenticate(token_name="EARTHENGINE_TOKEN"):
 #    geemap.ee_initialize(token_name=token_name)
-geemap.ee_initialize(project = "pareus")
+Map = geemap.Map(center=[65, 15], zoom=4)
 
 st.set_page_config(layout="wide")
 
@@ -31,17 +31,15 @@ st.sidebar.info(
 TRD_es = ee.Image('projects/pareus/assets/WP2/ES_cond_state_TRD') 
 
 # Streamlit app
-def main():
-    st.title("Ecosystem condition")
+
+st.title("Ecosystem condition")
 
 
     # Create a map
-    Map = geemap.Map(center=[65, 15], zoom=4)
-    Map.addLayer(TRD_es, {'min': 0, 'max': 1, 'palette': ['red', 'orange','yellow', 'green','darkgreen']}, 'Ecosystem condition Trondheim')
+
+Map.addLayer(TRD_es, {'min': 0, 'max': 1, 'palette': ['red', 'orange','yellow', 'green','darkgreen']}, 'Ecosystem condition Trondheim')
 
     # Display the map in Streamlit
-    st.write("Based on standardised NDVI per world cover type, soil carbon content, biodiversity intactness index and natural land cover types")
-    Map.to_streamlit(height=600)
+st.write("Based on standardised NDVI per world cover type, soil carbon content, biodiversity intactness index and natural land cover types")
+Map.to_streamlit(height=600)
 
-if __name__ == "__main__":
-    main()
