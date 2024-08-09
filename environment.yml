@@ -3,6 +3,7 @@ channels:
   - conda-forge
 dependencies:
   - gdal=3.4.3
+  - geopandas
   - pip
   - pip:
       - geopandas
