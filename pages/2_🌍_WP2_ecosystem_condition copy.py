@@ -7,7 +7,7 @@ import ee
 
 #def ee_authenticate(token_name="EARTHENGINE_TOKEN"):
 #    geemap.ee_initialize(token_name=token_name)
-Map = geemap.Map(center=[65, 15], zoom=4)
+Map = geemap.Map(center=[55, 15], zoom=3)
 
 st.set_page_config(layout="wide")
 
@@ -35,10 +35,9 @@ FRA_es = ee.Image('projects/pareus/assets/WP2/PACA_ES_cond')
 # Streamlit app
 
 st.title("Ecosystem condition")
-
-
-    # Create a map
-
+st.markdown(
+    "Within WP2 of the project, the project partner [INRAE](https://www.inrae.fr/en) models ecosystem condition. The condition modeling is based on standardised NDVI per world cover type, soil carbon content, biodiversity intactness index and natural land cover types."
+)
 
 vis_params = {
     'min': 0,
@@ -50,7 +49,7 @@ Map.add_colorbar(
     vis_params,
     label="Ecosystem condition",
     layer_name="Ecosystem condition Trøndelag",
-    orientation="vertical",
+    orientation="horizontal",
     transparent_bg=True,
 )
 
@@ -58,6 +57,6 @@ Map.addLayer(SVK_es, vis_params, 'Ecosystem condition Trnava Region')
 Map.addLayer(FRA_es, vis_params, 'Ecosystem condition PACA')
 
     # Display the map in Streamlit
-st.write("Based on standardised NDVI per world cover type, soil carbon content, biodiversity intactness index and natural land cover types")
+
 Map.to_streamlit(height=600)
 
