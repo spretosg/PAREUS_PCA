@@ -28,7 +28,9 @@ st.sidebar.info(
 
 
 
-TRD_es = ee.Image('projects/pareus/assets/WP2/ES_cond_state_TRD') 
+TRD_es = ee.Image('projects/pareus/assets/WP2/ES_cond_state_TRD')
+SVK_es = ee.Image('projects/pareus/assets/WP2/TRNAVA_ES_cond')
+FRA_es = ee.Image('projects/pareus/assets/WP2/PACA_ES_cond')
 
 # Streamlit app
 
@@ -37,7 +39,23 @@ st.title("Ecosystem condition")
 
     # Create a map
 
-Map.addLayer(TRD_es, {'min': 0, 'max': 1, 'palette': ['red', 'orange','yellow', 'green','darkgreen']}, 'Ecosystem condition Trondheim')
+
+vis_params = {
+    'min': 0,
+    'max': 1,
+    'palette': ['red', 'orange','yellow', 'green','darkgreen'],
+}
+Map.addLayer(TRD_es, vis_params, 'Ecosystem condition Trøndelag')
+Map.add_colorbar(
+    vis_params,
+    label="Ecosystem condition",
+    layer_name="Ecosystem condition Trøndelag",
+    orientation="vertical",
+    transparent_bg=True,
+)
+
+Map.addLayer(SVK_es, vis_params, 'Ecosystem condition Trnava Region')
+Map.addLayer(FRA_es, vis_params, 'Ecosystem condition PACA')
 
     # Display the map in Streamlit
 st.write("Based on standardised NDVI per world cover type, soil carbon content, biodiversity intactness index and natural land cover types")
