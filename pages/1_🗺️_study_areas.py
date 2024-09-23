@@ -47,8 +47,9 @@ geojson = GeoJson(
 
 # Display the map in the Streamlit app
 st.set_page_config(layout="wide")
-st.sidebar.image("./data/logo.png", width=200)
+
 st.title('PAREUS Study Areas')
+st.info("Click on the region you are interested to learn more about")
 
 # Create two columns: one for the map and another for details
 col1, col2 = st.columns([2, 1])  # Adjust ratio for width
@@ -59,20 +60,36 @@ with col1:
     geojson.add_to(m)
     map_output = st_folium(m, width=900, height=700)
     
-
-# Sidebar info
+st.sidebar.image("./data/logo.png", width=200)
+st.sidebar.title("Contact")
 st.sidebar.info(
+    
     """
-    - Web App URL: <https://pareus.streamlit.app/>
-    - GitHub repository: <https://github.com/spretosg/PAREUS_pca>
+    Project lead: Roel May
+    [Norwegian Institute for Nature Research (NINA)](https://www.nina.no)
+    *Trondheim, Norway*
+    
     """
 )
 
-st.sidebar.title("Contact")
+st.sidebar.title("Project partners")
+st.sidebar.info(
+    
+    """
+    
+    [Institut National de Recherche pour l’Agriculture l’Alimentation et l’Environnement (INRAE)](https://www.inrae.fr/)
+    *Aix-en-Provence, France* 
+    
+    [Institute of Landscape Ecology, Slovak Academy of Sciences (ILE-SAS)](https://www.sav.sk/?lang=en&doc=ins-org-ins&institute_no=50) 
+    *Bratislava, Slovakia*
+    """
+)
+
+st.sidebar.title("Resources")
 st.sidebar.info(
     """
-    Reto Spielhofer: <https://www.nina.no>
-    #PAREUS2024
+    - [Web App](https://pareus.streamlit.app/)
+    - [GitHub repository](https://github.com/spretosg/PAREUS_pca)
     """
 )
 
@@ -90,23 +107,26 @@ with col2:
         region_info = selected_regions[selected_regions['NUTS_ID'] == clicked_region['NUTS_ID']].iloc[0]
         region_details = get_region_info(region_info)
 
+        image_path = load_image(region_info['NUTS_ID'])
+
         # Load additional information from the text file
         additional_info = load_additional_info(region_info['NUTS_ID'])
 
             # Load image based on NUTS_ID
-        image_path = load_image(region_info['NUTS_ID'])
+        
 
         for key, value in region_details.items():
             st.write(f"**{key}:** {value}")
 
-            # Display additional information
-        #st.subheader("Additional Information")
-        st.markdown(additional_info)
-
-            # Display the image if available
         if image_path:
             #st.sidebar.subheader("Region Image")
             st.image(image_path, use_column_width=True)
         else:
             st.write("No image available for this region.")
+
+            # Display additional information
+        #st.subheader("Additional Information")
+        st.markdown(additional_info)
+
+
         

@@ -1,24 +1,11 @@
 import streamlit as st
-import geopandas as gpd
-import folium
-from streamlit_folium import st_folium
+import geemap.foliumap as geemap
 
-# Load the NUTS3 shapefile
-selected_regions = gpd.read_file("./data/study_areas.shp")
-
-# Filter to get three specific NUTS3 regions (replace with actual NUTS codes)
-#selected_regions = nuts3[nuts3['NUTS_ID'].isin(['DE600', 'FRH01', 'ES300'])]
+Map = geemap.Map(center=[55, 15], zoom=3)
 
 st.set_page_config(layout="wide")
 
-st.image("./data/logo.png", width=200)
-
-st.markdown("### Providing Adaptive knowledge for Ratcheting up the EU Biodiversity strategy for Sustainable landscapes and protected areas")
-st.info("Click on the left sidebar menu to navigate through the project work packages and explore the developed tools")
-
-
-
-
+st.sidebar.image("./data/logo.png", width=200)
 st.sidebar.title("Contact")
 st.sidebar.info(
     
@@ -50,4 +37,15 @@ st.sidebar.info(
     - [GitHub repository](https://github.com/spretosg/PAREUS_pca)
     """
 )
+
+
+# Streamlit app
+
+st.title("PCA landscape tool")
+
+st.markdown(
+    "This work package uses inputs from WP2 and WP3 and applies a spatial optimization model to identify potential OECM areas."
+)
+
+
 
