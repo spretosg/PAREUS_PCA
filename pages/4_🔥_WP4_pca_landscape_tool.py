@@ -1,5 +1,6 @@
 import streamlit as st
 import geemap.foliumap as geemap
+import streamlit.components.v1 as components
 
 Map = geemap.Map(center=[55, 15], zoom=3)
 
@@ -48,4 +49,23 @@ st.markdown(
 )
 
 
+st.markdown("### Spatial optimization")
+# Accordion using st.expander
+with st.expander("**Planning units PU**"):
+    st.write("Planning units are...")
+    
+    
+
+# Another accordion
+with st.expander("**Features**"):
+    st.write("This is another section of content.")
+
+with st.expander("**Costs**"):
+    st.write("This is another section of content.")
+
+with st.expander("**Constraints**"):
+    st.write("This is another section of content.")
+
+with st.expander("**Scenarios**"):
+    st.write("This is another section of content.")
 
