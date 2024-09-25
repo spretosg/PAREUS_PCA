@@ -14,27 +14,19 @@ st.set_page_config(layout="wide")
 st.image("./data/logo.png", width=200)
 
 st.markdown("### Providing Adaptive knowledge for Ratcheting up the EU Biodiversity strategy for Sustainable landscapes and protected areas")
-st.info("Click on the left sidebar menu to navigate through the project work packages and explore the developed tools")
+st.info("Click on the left sidebar menu to navigate through the projects content and work packages and explore the developed tools")
 
 st.write("Some text here")
 st.markdown("### Main objectives")
 st.write("Some text")
 
 
-st.markdown("### Glossary & concepts")
+#st.markdown("### Glossary & concepts")
 # Accordion using st.expander
-with st.expander("**Other Effective area-based Conservation Measures (OECM)**"):
+with st.expander("**What are 'Other Effective area-based Conservation Measures (OECM)'?**"):
     st.write("Definitions of OECMs")
     st.write("[OECM: A new paradigm for area-based conservation?](https://www.nina.no/english/About-NINA/News/article/oecm-a-new-paradigm-for-area-based-conservation)")
     
-
-# Another accordion
-with st.expander("**Protected areas**"):
-    st.write("This is another section of content.")
-
-with st.expander("**Conservation**"):
-    st.write("This is another section of content.")
-
 
 
 st.sidebar.title("Contact")

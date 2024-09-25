@@ -44,8 +44,14 @@ st.sidebar.info(
 st.title("Policy landscape")
 
 st.markdown(
-    "Within WP3 of the project, the project partner [ILEA SAS](https://www.sav.sk/?lang=en) analyses the policy landscape regarding protected areas and potential OECM. This is done using spatially explicit policy coherence analysis."
+    "Within WP3 of the project, the project partner [ILEA SAS](https://www.sav.sk/?lang=en) analyses the policy landscape regarding protected areas and potential OECM. WP3 will perform an in-depth evaluation into the policy landscape regarding the cumulative effects of current land-use planning practice and how the 30x30 target may be reached under current circumstances, how current PA management as well as OECM in the wider countryside may be improved and how to create a coherent network of PAs."
 )
+
+with st.expander("**Policy inventory**"):
+    st.write("This is another section of content.")
+
+with st.expander("**Policy coherence**"):
+    st.write("This is another section of content.")
 
 
 
