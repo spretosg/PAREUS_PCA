@@ -25,7 +25,7 @@ st.sidebar.info(
     [Institut National de Recherche pour l’Agriculture l’Alimentation et l’Environnement (INRAE)](https://www.inrae.fr/)
     *Aix-en-Provence, France* 
     
-    [Institute of Landscape Ecology, Slovak Academy of Sciences (ILE-SAS)](https://www.sav.sk/?lang=en&doc=ins-org-ins&institute_no=50) 
+    [Institute of Landscape Ecology, Slovak Academy of Sciences (ILE-SAS)](https://www.uke.sav.sk/en/ ) 
     *Bratislava, Slovakia*
     """
 )
@@ -44,7 +44,7 @@ st.sidebar.info(
 st.title("Policy landscape")
 
 st.markdown(
-    "Within WP3 of the project, the project partner [ILEA SAS](https://www.sav.sk/?lang=en) analyses the policy landscape regarding protected areas and potential OECM. WP3 will perform an in-depth evaluation into the policy landscape regarding the cumulative effects of current land-use planning practice and how the 30x30 target may be reached under current circumstances, how current PA management as well as OECM in the wider countryside may be improved and how to create a coherent network of PAs."
+    "Within WP3 of the project, the project partner [ILEA SAS](https://www.uke.sav.sk/en/) analyses the policy landscape regarding protected areas and potential OECM. WP3 will perform an in-depth evaluation into the policy landscape regarding the cumulative effects of current land-use planning practice and how the 30x30 target may be reached under current circumstances, how current PA management as well as OECM in the wider countryside may be improved and how to create a coherent network of PAs."
 )
 
 with st.expander("**Policy inventory**"):
