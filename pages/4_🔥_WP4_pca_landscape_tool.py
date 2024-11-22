@@ -2,6 +2,7 @@ import streamlit as st
 import geemap.foliumap as geemap
 import streamlit.components.v1 as components
 
+
 Map = geemap.Map(center=[55, 15], zoom=3)
 
 st.set_page_config(layout="wide")

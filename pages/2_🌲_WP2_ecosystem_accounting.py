@@ -51,10 +51,13 @@ FRA_es = ee.Image('projects/pareus/assets/WP2/PACA_ES_cond')
 
 # Streamlit app
 
-st.title("Ecosystem condition")
+st.title("Ecosystem accounting")
 st.markdown(
-    "Within WP2 of the project, the project partner [INRAE](https://www.inrae.fr/en) models ecosystem condition. The condition modeling is based on standardised NDVI per world cover type, soil carbon content, biodiversity intactness index and natural land cover types. The index is just valid within a case study area and can`t be compared across different areas."
+    "Within WP2 of the project an ecosystem accounting is performed. This incorporates an ecosystem condition and ecosystem service accounting. Both, ecosystem condition and ecosystem services will used further on in the project to define potential OECM and protected areas."
 )
+
+st.subheader("2.1 Ecosystem condition")
+st.markdown("[INRAE](https://www.inrae.fr/en) models ecosystem condition. The condition modeling is based on standardised NDVI per world cover type, soil carbon content, biodiversity intactness index and natural land cover types. The index is just valid within a case study area and can`t be compared across different areas")
 
 st.markdown("""
 - What are the ecostem extents and conditions within the case study areas?
@@ -115,3 +118,13 @@ else:
 
 Map.to_streamlit(height=600)
 
+
+st.subheader("2.2 Ecosystem services")
+st.markdown("[NINA](https://www.nina.no/en) develops a participatory tool to map ecosystem service and the use of nature benefits. This will be done within a two step online geoquestionnaire. For 10 ecosystem services, people are asked to delineate areas where they think they benefit from ecosystem services. With a random forest approach and a set of environmental variables the service values are projected to the whole study")
+
+st.markdown("""
+- What are the ecostem extents and conditions within the case study areas?
+
+- Map the ecosystem services (nature values) in the case study areas
+
+""")
